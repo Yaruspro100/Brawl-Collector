@@ -1,0 +1,14 @@
+# Зависимости
+node_modules/
+
+# Переменные окружения
+.env
+.env.local
+.env.*.local
+
+# Сборка React
+dist/
+build/
+
+# Логи
+*.log
