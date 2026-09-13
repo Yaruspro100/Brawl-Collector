@@ -1,11 +1,15 @@
-const express = require('express');
+import express from 'express';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(port, () => {
-  console.log(`Программа работает по адресу http://localhost:${port}.`);
+app.listen(PORT, () => {
+  console.log(`Программа работает по адресу http://localhost:${PORT}`);
 });
