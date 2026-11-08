@@ -1,0 +1,43 @@
+:root {
+    /* Тёмная тема */
+    --color-bg: #0d1b2a;
+    --color-surface: #152a42;
+    --color-text: #e3ecf7;
+    --color-text-muted: #7fa0c4;
+    --color-primary-bg: #1a3350;
+    --color-primary: #4f9df5;
+    --color-primary-hover: #7ab8f5;
+    --color-primary-light: #2f8ff0;
+
+    /* Светлая тема */
+    [data-theme="light"] {
+        --color-primary: #2f8ff0;
+        --color-primary-dark: #1b4e8c;
+        --color-primary-hover: #1e7bd6;
+        --color-primary-light: #7ab8f5;
+        --color-primary-bg: #eaf3fd;
+        --color-bg: #ffffff;
+        --color-surface: #f5f9fe;
+        --color-text: #172a45;
+        --color-text-muted: #5a7ca6;
+    }
+
+    --color-gold: gold;
+
+    /* Статусы */
+    --color-success: #2fbf71;
+    --color-danger: #e5484d;
+    --color-warning: #f5a623;
+
+    /* Размеры */
+    --xs: 4px;
+    --sm: 8px;
+    --md: 16px;
+    --l: 24px;
+    --xl: 32px;
+    --xxl: 48px;
+    --huge: 64px;
+
+    /* Шрифты */
+    --font-body: 'Inter', system-ui, sans-serif;
+}

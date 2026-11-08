@@ -1,0 +1,43 @@
+.header {
+    padding: var(--md);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header a {
+    display: flex;
+    align-items: center;
+    gap: var(--sm);
+    text-decoration: none;
+    color: inherit;
+}
+
+.header form {
+    align-self: center;
+    justify-self: center;
+}
+
+.player-header {
+    padding: var(--sm);
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    gap: var(--sm);
+}
+
+.player-icon {
+    width: var(--xl);
+    height: var(--xl);
+}
+
+.trophies-icon {
+    width: var(--l);
+    height: var(--l);
+    object-fit: contain;
+}
+
+.trophies-amount {
+    color: var(--color-gold);
+}
