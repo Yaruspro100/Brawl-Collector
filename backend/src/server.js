@@ -2,15 +2,14 @@ import express from 'express';
 import cors from 'cors';
 import { PORT } from './config/config.js';
 import { getPlayer } from './brawlAPI.js';
-import { getPlayerIcon } from './brawlifyCDN.js'
 
 const app = express();
 app.use(cors());
 
 const cache = new Map();
 
-app.get('/player', async (req, res) => {
-  const tag = (req.query.tag || '').toUpperCase();
+app.get('/player/:tag', async (req, res) => {
+  const tag = (req.params.tag || '').toUpperCase();
   const now = Date.now();
   const hit = cache.get(tag);
 

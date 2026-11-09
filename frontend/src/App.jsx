@@ -5,9 +5,13 @@ import { useState } from 'react';
 function App() {
 
   const [tag, setTag] = useState('');
+  const [player, setPlayer] = useState(null);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    const res = await fetch(`/player/${encodeURIComponent(tag)}`);
+    const data = await res.json();
+    setPlayer(data);
   }
 
   return (
@@ -27,13 +31,15 @@ function App() {
           <button type="submit">Submit</button>
         </form>
       </header>
-      <div className="player-header">
-        <img className="player-icon"></img>
-        <h2 className="player-nickname">Player Nickname</h2>
-        <button className="player-tag">#tag</button>
-        <span className="trophies-amount">999999</span>
-        <img className="trophies-icon" src={trophyIcon}></img>
-      </div>
+      {player && (
+          <div className="player-header">
+          <img className="player-icon" src={player.iconUrl} alt={player.name} />
+          <h2 className="player-nickname">{player.name}</h2>
+          <button className="player-tag">{player.tag}</button>
+          <span className="trophies-amount">{player.trophies}</span>
+          <img className="trophies-icon" src={trophyIcon} alt="trophies" />
+        </div>
+      )}
     </div>
   )
 }
